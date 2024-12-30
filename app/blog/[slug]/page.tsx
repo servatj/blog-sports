@@ -50,6 +50,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: metadata.description,
   };
 }
+
 export default async function Blog({ params }: Props) {
   if (!params || !(await params).slug) {
     notFound();

@@ -8,6 +8,8 @@ import Pre from "@/components/mdx/pre"; // Adjust the import path as needed
 import Image from "@/components/mdx/image"; // Adjust the import path as needed
 import CustomLink from "@/components/mdx/custom-link"; // Adjust the import path as needed
 import PopularPosts from "@/components/posts/popular-posts";
+import YoutubeVideos from "./components/youtube/youtube-videos";
+import ArticleCard from "./components/card/ArticleCard";
 import { Button } from "@/components/ui/button";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
@@ -15,13 +17,15 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ...components,
     YouTube,
     PopularPosts,
+    YoutubeVideos,
+    ArticleCard,
     Button: (props) => (
       <div className="pb-4">
         <Button {...props} className="" />
       </div>
     ),
-    Image, // Use the custom Image component
-    pre: Pre, // Use the custom Pre component
+    Image,
+    pre: Pre,
     code: ({ className, children, ...rest }) => {
       if (className) {
         return (

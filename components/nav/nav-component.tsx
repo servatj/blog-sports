@@ -14,9 +14,8 @@ import {
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 
 const navItems = [
-  { href: "/blog", label: "Blog" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
+  { href: "/last", label: "ULTIMA HORA" },
+  { href: "/results", label: "RESULTS" },
 ];
 
 function NavComponent() {
@@ -57,7 +56,7 @@ function NavComponent() {
       <div className="flex items-center">
         <h1 className="text-4xl font-black mr-6">
           <Link href="/">
-            <span className="text-primary">MDX</span>Blog
+            <span className="text-white">Sports Blog</span>
           </Link>
         </h1>
         <nav className="hidden sm:flex h-9 space-x-6  items-end">
@@ -65,7 +64,7 @@ function NavComponent() {
             <Link
               key={item.href}
               href={item.href}
-              className={`hover:text-primary ${
+              className={`hover:text-primary text-white ${
                 isActive(item.href) ? "font-semibold" : ""
               }`}
             >

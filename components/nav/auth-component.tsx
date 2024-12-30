@@ -4,7 +4,7 @@ import LogoutButton from "./logout-button";
 import { buttonVariants } from "../ui/button";
 import Link from "next/link";
 
-async function AuthComponent() {
+async function AuthComponent({ className }) {
   const supabase = await createClient();
   const {
     data: { user },
@@ -15,9 +15,11 @@ async function AuthComponent() {
       {user?.email ? (
         <LogoutButton userEmail={user.email} />
       ) : (
-        <Link className={buttonVariants()} href="/sign-in">
+        <button
+          className={`bg-black text-white border border-white rounded px-4 py-2 ${className}`}
+        >
           Login
-        </Link>
+        </button>
       )}
     </div>
   );

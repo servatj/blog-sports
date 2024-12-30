@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import EditPageButton from "@/components/page/edit-page-button";
 import OpenInCursor from "@/components/page/open-page-in-cursor-button";
 import { isDevMode } from "@/lib/utils/is-dev-mode";
+import ArticleCard from "@/components/card/ArticleCard"; // Import the CardGame component
 interface MdxModule {
   default: React.ComponentType;
   metadata: {
@@ -52,18 +53,7 @@ export default async function HomePage() {
 
   return (
     <div className="flex flex-col max-w-3xl w-full gap-8 pt-10">
-      <h1 className="text-6xl font-black sm:text-center">
-        Welcome to <span className="text-primary">MDX</span>Blog
-      </h1>
-      {isDevMode() && (
-        <div className="flex gap-3">
-          <EditPageButton slug={metadata.slug ?? "default-slug"} />
-          <OpenInCursor path={metadata.slug ?? "default-path"} />
-        </div>
-      )}
-      <article className="prose prose-lg mx-auto w-full">
         <Content />
-      </article>
     </div>
   );
 }
