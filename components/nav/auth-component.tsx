@@ -4,7 +4,7 @@ import LogoutButton from "./logout-button";
 import { buttonVariants } from "../ui/button";
 import Link from "next/link";
 
-async function AuthComponent({ className }) {
+async function AuthComponent({ className }: { className?: string }) {
   const supabase = await createClient();
   const {
     data: { user },
